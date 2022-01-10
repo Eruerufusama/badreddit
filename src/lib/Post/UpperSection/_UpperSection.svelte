@@ -3,13 +3,15 @@
 
     export let thumbnail;
     export let title;
-    export let link;
+    export let url;
 </script>
 
 <section>
     <Image thumbnail={thumbnail} />
     <h2>
-        { title }
+        <a href={url} target="_blank" rel="noopener noreferrer">
+            { title }
+        </a>
     </h2>
 </section>
 

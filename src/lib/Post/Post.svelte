@@ -17,7 +17,6 @@
         isOpen = !isOpen;
     }
 
-    console.log(post);
 
 </script>
 <article>
@@ -27,19 +26,16 @@
     <main>
         <UpperSection
             title={post.title}
-            link={post.link}
             thumbnail={post.thumbnail}
+            url={post.url}
         />
-
         {#if isOpen}
             <Selftext selftext={post.selftext} />
         {/if}
-
         <LowerSection
             author={post.author}
             num_comments={post.num_comments}
         />
-
     </main>
 
     {#if post.is_self}
