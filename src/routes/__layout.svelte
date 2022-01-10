@@ -2,7 +2,6 @@
     import '../default.sass';
     import subreddits from '$lib/data/navbar.json';
 
-    export let key;
 </script>
 
 <svelte:head>

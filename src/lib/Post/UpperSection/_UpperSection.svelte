@@ -3,6 +3,7 @@
 
     export let thumbnail;
     export let title;
+    export let link;
 </script>
 
 <section>

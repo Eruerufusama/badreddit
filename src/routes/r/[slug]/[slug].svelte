@@ -49,6 +49,7 @@
 </main>
 
 <style lang="sass">
+
     nav
         display: flex
         align-items: center
@@ -67,4 +68,5 @@
         padding: 1em
         row-gap: 1em
         margin: auto
+
 </style>

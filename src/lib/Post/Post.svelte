@@ -27,6 +27,7 @@
     <main>
         <UpperSection
             title={post.title}
+            link={post.link}
             thumbnail={post.thumbnail}
         />
 
