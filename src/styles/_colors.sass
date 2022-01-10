@@ -1,0 +1,29 @@
+$black: #0D0D0D
+$midnight: #161616
+$night: #1e1e1e
+$silver-lining: #3d3d3d
+$dusk: #575757
+$grey: #cccccc
+$white: #ffffff
+$snow: #f1f1f1
+$ice: #e2e6f3
+
+@media (prefers-color-scheme: dark)
+    :root
+        --color-foreground-1: #{$white}
+        --color-foreground-2: #{$grey}
+        --color-foreground-3: #{$dusk}
+        --color-background-1: #{$black}
+        --color-background-2: #{$midnight}
+        --color-background-3: #{$night}
+        --color-background-4: #{$silver-lining}
+
+@media (prefers-color-scheme: light)
+    :root
+        --color-foreground-1: #{$black}
+        --color-foreground-2: #{$midnight}
+        --color-foreground-3: #{$night}
+        --color-background-1: #{$white}
+        --color-background-2: #{$ice}
+        --color-background-3: #{$snow}
+        --color-background-4: #{$silver-lining}
