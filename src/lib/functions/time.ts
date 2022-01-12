@@ -1,4 +1,9 @@
-export function getTimeSincePosted(timestamp: number) {
+interface RedditTime {
+    time: number,
+    format: string,
+}
+
+export function getTimeSincePosted(timestamp: number): RedditTime {
     const currentTimestamp = Date.now() / 1000;
     const timeSincePostedInSeconds = currentTimestamp - timestamp;
 
