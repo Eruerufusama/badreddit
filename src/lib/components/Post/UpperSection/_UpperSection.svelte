@@ -1,25 +1,17 @@
-<script>
+<script lang="ts">
     // imports
     import Image from './_image.svelte';
-    import { replaceAngleBrackets } from '$lib/functions/filterText';
+    import Title from './_Title.svelte';
     
     // props
-    export let thumbnail;
-    export let title;
-    export let url;
+    export let thumbnail: string;
+    export let title: string;
+    export let url: string;
 </script>
 
 <section>
-    <Image thumbnail={thumbnail} />
-    <h2>
-        <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            { replaceAngleBrackets(title) }
-        </a>
-    </h2>
+    <Image {thumbnail} />
+    <Title {url} {title} />
 </section>
 
 <style lang="sass">
