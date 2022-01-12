@@ -10,7 +10,9 @@
 >
 
 <style lang="sass">
+
     img
         box-sizing: border-box
         border-radius: 2em
+
 </style>

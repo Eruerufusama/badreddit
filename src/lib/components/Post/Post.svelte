@@ -1,11 +1,13 @@
-<script>
+<script lang="ts">
     import { fly } from 'svelte/transition';
     import LowerSection from './LowerSection/_LowerSection.svelte';
     import Selftext from './MiddleSection/_Selftext.svelte';
     import UpperSection from './UpperSection/_UpperSection.svelte';
+    import { formatVotes } from '$lib/functions/formatVotes';
+    import type { RedditPost } from '$lib/types/subredditPosts';
 
 //  props
-    export let post;
+    export let post: RedditPost;
 
 //  states
     let isOpen = false;
@@ -15,31 +17,24 @@
     function toggleOpen() {
         isOpen ? symbol = '+' : symbol = '-';
         isOpen = !isOpen;
+        console.log(post);
     }
 
-
+    const { score, title, thumbnail, url, selftext, author, created_utc, num_comments, is_self } = post;
 </script>
 <article>
     <aside>
-        {post.score}
+        { formatVotes(score) }
     </aside>
     <main>
-        <UpperSection
-            title={post.title}
-            thumbnail={post.thumbnail}
-            url={post.url}
-        />
+        <UpperSection {title} {thumbnail} {url} />
         {#if isOpen}
-            <Selftext selftext={post.selftext} />
+            <Selftext {selftext} />
         {/if}
-        <LowerSection
-            author={post.author}
-            timestamp={post.created_utc}
-            num_comments={post.num_comments}
-        />
+        <LowerSection {author} {created_utc} {num_comments} />
     </main>
 
-    {#if post.is_self}
+    {#if is_self}
     <div>
         <button on:click={toggleOpen}>
             {#if isOpen}
@@ -82,6 +77,7 @@
                 display: grid
                 place-items: center
                 background-color: var(--color-background-4)
+                border-radius: 0 0.5rem 0.5rem 0
 
 
                 &:hover

@@ -1,11 +1,11 @@
 <script>
     import { getTimeSincePosted } from '$lib/functions/time';
 
-    export let timestamp;
+    export let created_utc;
     export let author;
     export let num_comments;
 
-    let { time, format } = getTimeSincePosted(timestamp);
+    let { time, format } = getTimeSincePosted(created_utc);
 
     if (time !== 1) {
         format += 's';
@@ -27,6 +27,7 @@
         color: var(--color-foreground-3)
         justify-content: space-between
         padding: 0.5rem 1rem
+        border-bottom-left-radius: 0.5rem
 
         span
             color: var(--color-foreground-2)
