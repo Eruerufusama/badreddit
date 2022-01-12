@@ -46,7 +46,7 @@
     <main>
         <nav>
             <h1>/r/{ subreddit }</h1>
-            <SubredditMenu subreddit />
+            <SubredditMenu {subreddit} />
         </nav>
     
         {#each posts as post}
@@ -66,7 +66,7 @@
 
     main
         display: grid
-        width: min(90vw, 1080px)
+        width: min(95vw, 1080px)
         row-gap: 1em
         box-sizing: border-box
         padding: 1em
