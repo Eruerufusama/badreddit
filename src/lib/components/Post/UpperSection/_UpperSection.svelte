@@ -1,6 +1,9 @@
 <script>
+    // imports
     import Image from './_image.svelte';
-
+    import { replaceAngleBrackets } from '$lib/functions/filterText';
+    
+    // props
     export let thumbnail;
     export let title;
     export let url;
@@ -9,8 +12,12 @@
 <section>
     <Image thumbnail={thumbnail} />
     <h2>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-            { title }
+        <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            { replaceAngleBrackets(title) }
         </a>
     </h2>
 </section>
@@ -23,8 +30,6 @@
         padding: 1rem
         column-gap: 1rem
         align-items: center
-
-        span
-            color: var(--color-foreground-2)
+        border-top-left-radius: 0.5rem
 
 </style>

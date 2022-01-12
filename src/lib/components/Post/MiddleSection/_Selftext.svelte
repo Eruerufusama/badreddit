@@ -1,9 +1,13 @@
 <script lang="ts">
+    // imports
+    import { replaceAngleBrackets } from '$lib/functions/filterText';
+
+    // props
     export let selftext: string;
 </script>
 
 <section>
-    <p>{ selftext }</p>
+    <p>{ replaceAngleBrackets(selftext) }</p>
 </section>
 
 <style lang="sass">
