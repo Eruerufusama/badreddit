@@ -1,4 +1,6 @@
 <script>
+
+    // imports
     import '../default.sass';
     import subreddits from '$lib/data/navbar.json';
 
@@ -19,13 +21,16 @@
 <header>
     <ul>
         {#each subreddits as subreddit}
-            <li><a href={`/r/${subreddit}`}>{ subreddit }</a></li>
+            <li>
+                <a href={`/r/${subreddit}`}>{ subreddit }</a>
+            </li>
         {/each}
     </ul>
 </header>
 <slot />
 
 <style lang="sass">
+
     header
         widht: 100%
         display: grid
@@ -35,4 +40,5 @@
         ul
             display: flex
             gap: 1em
+
 </style>
