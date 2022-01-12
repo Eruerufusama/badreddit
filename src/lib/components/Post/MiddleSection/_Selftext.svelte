@@ -3,7 +3,7 @@
 </script>
 
 <section>
-    <p>{selftext}</p>
+    <p>{ selftext }</p>
 </section>
 
 <style lang="sass">

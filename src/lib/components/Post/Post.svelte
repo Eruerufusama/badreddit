@@ -34,6 +34,7 @@
         {/if}
         <LowerSection
             author={post.author}
+            timestamp={post.created_utc}
             num_comments={post.num_comments}
         />
     </main>
